@@ -16,6 +16,7 @@ class App extends Component {
     this.loadLocalStorage();
   };
 
+  // Permet le chargement du LocalStorage afin de récupérer les bookmarks enregistrés localement sous l'item websites
   loadLocalStorage = () => {
     const cachedWebsites = localStorage.getItem('websites');
     if (cachedWebsites !== null) {
@@ -26,18 +27,23 @@ class App extends Component {
     }
   };
 
+  // Permet d'envoyer la valeur dans le LocalStorage dans l'item websites
   sendLocalStorage = value => {
     value.length === 0
         ? localStorage.clear()
         : localStorage.setItem('websites', value);
   };
 
+  // Fonction utilisée dans BookmarkForm.js
+  // Permet d'ajouter le nouveau bookmark dans la liste de state.websites et l'envoie vers updateWebsiteList
   addWebsite = newWebsite => {
     let newWebsiteList = this.state.websites;
     newWebsiteList.push(newWebsite);
     this.updateWebsiteList(newWebsiteList);
   };
 
+  // Fonction utilisée dans Bookmark.js
+  // Permet de supprimer le bookmark avec l'id correspondant de la liste de state.websites et l'envoie vers updateWebsiteList
   deleteWebsite = id => {
     let newWebsiteList = this.state.websites.filter((website, index) => {
         return index !== id;
@@ -45,6 +51,7 @@ class App extends Component {
     this.updateWebsiteList(newWebsiteList);
   };
 
+  // Update la liste de websites et envoie la nouvelle version dans le LocalStorage
   updateWebsiteList = value => {
     this.setState({
         websites: value

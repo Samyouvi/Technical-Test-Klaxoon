@@ -8,6 +8,8 @@ class BookmarkForm extends Component {
     type: ''
   }
 
+  // Event récupéré lors de l'appui sur le bouton d'ajout de bookmark
+  // Vérifie si le bookmark correspond à la vérification d'url puis l'ajout est remonté sur App.js
   handleSubmit = event => {
     event.preventDefault();
     let userInput = this.state.websiteAddress;
@@ -22,7 +24,8 @@ class BookmarkForm extends Component {
     }
   };
 
-  updateInputState = event => {
+  // onChangeValue pour récupérer les infos de l'input de l'ajout de bookmark
+  onChangeValue = event => {
     this.setState({ websiteAddress: event.target.value });
   };
 
@@ -33,7 +36,7 @@ class BookmarkForm extends Component {
             <input
                 type="text"
                 value={this.state.websiteAddress}
-                onChange={this.updateInputState}
+                onChange={this.onChangeValue}
                 placeholder="Ajouter un bookmark"
                 autoFocus
                 required

@@ -15,6 +15,7 @@ class Bookmarks extends Component {
         };
     }
 
+    // Récupération des infos des bookmarks lors de l'appel de la page
     componentDidMount(){
       var myHeaders = new Headers( { 'Origin': 'https://javascript.info' })
       if (this.props.website.includes('vimeo')){
@@ -38,6 +39,7 @@ class Bookmarks extends Component {
       }
     }
 
+    // Récupération des infos des bookmarks lors d'un update de la page (suppresion d'un bookmark par ex)
     componentDidUpdate(){
       var myHeaders = new Headers( { 'Origin': 'https://javascript.info' })
       if (this.props.website.includes('vimeo')){
@@ -61,15 +63,18 @@ class Bookmarks extends Component {
       }
     }
 
+    // Suppression d'un bookmark, remonté sur App.js
     handleDelete = () => {
         this.props.deleteWebsite(this.props.id);
     };
 
+    // Event récupéré lors de l'appui sur le bouton submit de l'édition de mots-clés
     handleEditSubmit = event => {
       event.preventDefault();
       this.onAddItem();
     };
 
+    // Suppression d'un mots-clé
     handleDeleteKeyword = index => {
       this.setState(state => {
         const keywords = state.keywords.filter((item, id) => index !== id);
@@ -80,10 +85,12 @@ class Bookmarks extends Component {
       this.toggleEditForm()
     }
 
+    // onChangeValue pour récupérer les infos de l'input de l'édition de mots-clés
     onChangeValue = event => {
       this.setState({ value: event.target.value });
     };
 
+    // Ajout d'un mot-clé
     onAddItem = () => {
       let newKeywordList = this.state.keywords;
       if(!this.state.keywords.includes(this.state.value)){
@@ -92,12 +99,14 @@ class Bookmarks extends Component {
       this.toggleEditForm(newKeywordList)
     };
 
+    // Event récupéré lors de l'appui sur le bouton edit
     toggleEditForm = value => {
       this.state.show === 'none'
             ? this.setState({ show: null })
             : this.setState({ show: 'none' });
     };
 
+    // Changement des secondes récupérées dans le json vimeo en Heures Minutes Secondes
     secondToHms(d){
       d = Number(d)
       var h = Math.floor(d / 3600)
