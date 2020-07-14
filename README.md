@@ -33,3 +33,6 @@ Cela ouvre l'application sur le navigateur par défaut à l'adresse [http://loca
 
 Les mots-clés sont actifs, il est possible d'en ajouter et de les supprimer, il n'est pas possible de les modifier. Cependant, à la différence des url, il ne sont pas gardés localement, donc avec un rechargement de la page, ils disparaissent. <br/>
 En utilisant oEmbed via Flickr, le json récupéré ne propose pas de date d'ajout, les informations concernant cette colonne ne sont donc pas présentes pour les images provenant de Flickr. Je n'ai malheureusement pas trouvé de moyen de récupérer les informations d'une image seule en utilisant l'api fournie.
+
+### FIX
+

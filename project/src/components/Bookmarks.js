@@ -38,6 +38,29 @@ class Bookmarks extends Component {
       }
     }
 
+    componentDidUpdate(){
+      var myHeaders = new Headers( { 'Origin': 'https://javascript.info' })
+      if (this.props.website.includes('vimeo')){
+        fetch("https://vimeo.com/api/oembed.json?url=" + this.props.website)
+        .then(res => res.json())
+        .then(result => {
+          this.setState({
+              data_loaded: true,
+              items: result
+          })
+        })
+      }else{ 
+        fetch("https://cors-anywhere.herokuapp.com/https://www.flickr.com/services/oembed/?format=json&url=" + this.props.website, {headers : myHeaders})
+        .then(res => res.json())
+        .then(result => {
+            this.setState({
+                data_loaded: true,
+                items: result
+            })
+        })
+      }
+    }
+
     handleDelete = () => {
         this.props.deleteWebsite(this.props.id);
     };
@@ -81,9 +104,9 @@ class Bookmarks extends Component {
       var m = Math.floor(d % 3600 / 60)
       var s = Math.floor(d % 3600 % 60)
 
-      var hDisplay = h > 0 ? h + (h == 1 ? " heure " : " heures ") : ""
-      var mDisplay = m > 0 ? m + (m == 1 ? " minute " : " minutes ") : ""
-      var sDisplay = s > 0 ? s + (s == 1 ? " seconde" : " secondes") : ""
+      var hDisplay = h > 0 ? h + (h === 1 ? " heure " : " heures ") : ""
+      var mDisplay = m > 0 ? m + (m === 1 ? " minute " : " minutes ") : ""
+      var sDisplay = s > 0 ? s + (s === 1 ? " seconde" : " secondes") : ""
 
       return hDisplay + mDisplay + sDisplay
     }
