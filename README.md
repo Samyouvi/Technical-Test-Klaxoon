@@ -2,7 +2,8 @@
 
 ### Informations
 
-Ceci est un gestionnaire de bookmarks réalisé en ReactJS. Il permet de renseigner des url provenant des sites vimeo et flickr uniquement. Le format des url accepté est : <br/>
+Ceci est un gestionnaire de bookmarks réalisé en ReactJS. Il permet de renseigner des url provenant des sites vimeo et flickr uniquement. <br/>
+/!\ Le format des url accepté est : <br/>
 http://www.flickr.com/photos/* <br/>
 https://www.flickr.com/photos/* <br/>
 http://www.vimeo.com/* <br/>
@@ -13,6 +14,8 @@ https://vimeo.com/59856566 <br/>
 https://vimeo.com/435789152 <br/>
 http://www.flickr.com/photos/bees/2341623661/ <br/>
 https://www.flickr.com/photos/gsfc/50102892582/in/explore-2020-07-13/ 
+
+Une regex a été mise en place pour pallier à ce problème, mais n'étant pas certain du fonctionnement parfait de cette regex et au risque de faire planter l'application à cause d'un json défectueux, merci de respecter ces formats d'url. 
 
 Les bookmarks sont gardés grâce au LocalStorage, il seront donc toujours présent avec un rechargement de page.
 
