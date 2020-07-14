@@ -16,7 +16,7 @@ class Bookmarks extends Component {
     }
 
     componentDidMount(){
-      var myHeaders = new Headers( { "X-Requested-With": "XMLHttpRequest" })
+      var myHeaders = new Headers( { 'Origin': 'https://javascript.info' })
       if (this.props.website.includes('vimeo')){
         fetch("https://vimeo.com/api/oembed.json?url=" + this.props.website)
         .then(res => res.json())
@@ -39,7 +39,7 @@ class Bookmarks extends Component {
     }
 
     componentDidUpdate(){
-      var myHeaders = new Headers( { "X-Requested-With": "XMLHttpRequest" })
+      var myHeaders = new Headers( { 'Origin': 'https://javascript.info' })
       if (this.props.website.includes('vimeo')){
         fetch("https://vimeo.com/api/oembed.json?url=" + this.props.website)
         .then(res => res.json())
