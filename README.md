@@ -5,9 +5,9 @@
 Ceci est un gestionnaire de bookmarks réalisé en ReactJS. Il permet de renseigner des url provenant des sites vimeo et flickr uniquement. <br/>
 /!\ Le format des url accepté est : <br/>
 > `http://www.flickr.com/photos/*` <br/>
-> `https://www.flickr.com/photos/*̀` <br/>
-> ̀`http://www.vimeo.com/*` <br/>
-> `https://www.vimeo.com/*̀`
+> `https://www.flickr.com/photos/*` <br/>
+> `http://www.vimeo.com/*` <br/>
+> `https://www.vimeo.com/*` 
 
 exemples : <br/>
 > `https://vimeo.com/59856566` <br/>
@@ -37,7 +37,7 @@ En utilisant oEmbed via Flickr, le json récupéré ne propose pas de date d'ajo
 ### PROBLEMES 17h30 14/07
 
 Le problème rencontré provient de la requête provenant de Flickr. <br/>
-- Utilisant un proxy "https://cors-anywhere.herokuapp.com", les requêtes sont limitées à 200 par heures, une fois ce nombre de requête dépassé, un problème de récupération du json se pose et le "Data Loading..." tourne en boucle. <br/>
+- Utilisant un proxy "`https://cors-anywhere.herokuapp.com`", les requêtes sont limitées à 200 par heures, une fois ce nombre de requête dépassé, un problème de récupération du json se pose et le "Data Loading..." tourne en boucle. <br/>
 
 
 #### PATCH
