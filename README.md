@@ -2,7 +2,7 @@
 
 ### Informations
 
-Ceci est un gestionnaire de bookmarks réalisé en ReactJS. Il permet de renseigner des url provenant des sites vimeo et flickr uniquement. Le format des url accepté est : <\br>
+Ceci est un gestionnaire de bookmarks réalisé en ReactJS. Il permet de renseigner des url provenant des sites vimeo et flickr uniquement. Le format des url accepté est : <br/>
 http://www.flickr.com/photos/* <\br>
 https://www.flickr.com/photos/* <\br>
 http://www.vimeo.com/* <\br>
