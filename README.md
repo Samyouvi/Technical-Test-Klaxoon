@@ -25,6 +25,12 @@ Il suffit pour ce projet de récupérer les fichiers via la manipulation normale
 -> Page principale du projet -> bouton Code -> Clone with HTTPS/Download ZIP <br/>
 Un fois les fichiers récupérés, en se plaçant dans le répertoire "projet" :
 
+#### `npm install`
+
+Cela va installer les dépendances requises pour le projet
+
+Puis
+
 #### `npm start`
 
 Cela ouvre l'application sur le navigateur par défaut à l'adresse [http://localhost:3000](http://localhost:3000).
