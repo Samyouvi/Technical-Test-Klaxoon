@@ -34,5 +34,13 @@ Cela ouvre l'application sur le navigateur par défaut à l'adresse [http://loca
 Les mots-clés sont actifs, il est possible d'en ajouter et de les supprimer, il n'est pas possible de les modifier. Cependant, à la différence des url, il ne sont pas gardés localement, donc avec un rechargement de la page, ils disparaissent. <br/>
 En utilisant oEmbed via Flickr, le json récupéré ne propose pas de date d'ajout, les informations concernant cette colonne ne sont donc pas présentes pour les images provenant de Flickr. Je n'ai malheureusement pas trouvé de moyen de récupérer les informations d'une image seule en utilisant l'api fournie.
 
-### FIX
+### PROBLEMES 17h30 14/07
 
+Le problème rencontré provient de la requête provenant de Flickr. <br/>
+- Utilisant un proxy "https://cors-anywhere.herokuapp.com", les requêtes sont limitées à 200 par heures, une fois ce nombre de requête dépassé, un problème de récupération du json se pose et le "Data Loading..." tourne en boucle. <br/>
+
+
+#### PATCH
+
+Pour clear le localStorage et éviter de garder les erreurs provenant du problème cité ci-dessus, un patch consiste à commenter la ligne dans App.js/l.16 (this.loadLocalStorage();), enregistrer, renseigner un nouveau bookmark, décommenter la ligne précédente, enregister. Cela aura pour effet de reset le LocalStorage avec le nouveau bookmark. <br/>
+Le fix le plus évident serait de corriger le problème énoncé ci-dessus.
